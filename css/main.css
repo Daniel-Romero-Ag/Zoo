@@ -1,0 +1,114 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    background-color: #fff6ed;
+}
+
+.transcition-opacity {
+    transition: opacity 400ms;
+}
+
+.show {
+    opacity: 1;
+}
+
+.hide {
+    opacity: 0;
+}
+
+.carrusel {
+    position: relative;
+    height: 80vh;
+}
+
+img {
+    width: 100%;
+}
+
+
+/* HEADER---------------- */
+
+.carrusel img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.contenedor-menu {
+    background-color: #e8c39e;
+}
+
+@media (min-width: 400px) {
+    .contenedor-menu i {
+        display: none;
+    }
+}
+
+#menu-principal ul {
+    padding: 10px 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+#menu-principal ul li {
+    flex-basis: 100%;
+    transition: all 0.5s ease;
+}
+
+.dis-none {
+    display: none;
+}
+
+.dis-block {
+    display: block;
+}
+
+@media (min-width: 400px) {
+    #menu-principal {
+        display: block;
+    }
+    #menu-principal ul li {
+        flex-basis: 20%;
+    }
+}
+
+#menu-principal ul li a {
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+}
+
+#menu-principal ul li:hover {
+    background-color: red;
+    background-color: #d7b28d;
+    text-decoration: underline;
+}
+
+#menu-principal ul li:hover a {
+    color: #905029;
+}
+
+
+/*ACTIVIDADES ---------------- */
+
+.bg-agua {
+    background-image: url("../img/agua.jpg");
+    background-size: cover;
+}
+
+.bg-tierra {
+    background-image: url("../img/tierra.jpg");
+    background-size: cover;
+}

@@ -1,0 +1,13 @@
+Options +FollowSymLinks
+RewriteEngine On
+
+RewriteRule ^amigos/([0-9]+)$ amigos.php?id=$1
+RewriteRule ^amigos$ amigos.php
+RewriteRule ^categorias/([0-9]+)$ categorias.php?id=$1
+RewriteRule ^categorias$ categorias.php
+RewriteRule ^horarios/([0-9]+)$ horarios.php?id=$1
+RewriteRule ^horarios$ horarios.php
+RewriteRule ^actividades/([0-9]+)$ actividades.php?id=$1
+RewriteRule ^actividades$ actividades.php
+RewriteRule ^prueba/([0-9]+)$ prueba.php?id=$1
+RewriteRule ^prueba$ prueba.php

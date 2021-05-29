@@ -1,0 +1,5 @@
+Options +FollowSymLinks
+RewriteEngine On
+
+RewriteRule ^amigos/([0-9]+)$ amigos.php?id=$1
+RewriteRule ^amigos$ amigos.php
