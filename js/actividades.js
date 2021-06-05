@@ -1,3 +1,4 @@
+import JoinHelper from "./JoinHelper.js"
 export default function agregarActividades(contenedor) {
     fetch("http://localhost/zoo/PHP/Apis/actividades")
         .then(res => res.json())
@@ -18,7 +19,7 @@ export default function agregarActividades(contenedor) {
                                 })
                             })
                         });
-
+                        console.log(actividades[0])
                         const $contenedorActividades = document.querySelector(contenedor)
                         const $templateActividad = document.getElementById("template-actividad").content
                         const $activitiesFragment = document.createDocumentFragment()
@@ -77,4 +78,15 @@ function mostrarModal({ nombre, edad_minima, precio, descripcion_larga, equipo, 
     console.log(document.querySelector("body"))
     var myModal = new bootstrap.Modal(document.getElementById("modalActividad"))
     myModal.show();
+}
+
+actividadesFetch()
+async function actividadesFetch() {
+    const actividadesJoins = new JoinHelper(),
+        actividadesHorarios = await actividadesJoins.innerJoin("actividades", "id_horarios", "horarios", "id")
+    actividadesJoins.setConcatAlias(
+        ["categorias", "nombre", "categoria"], ["categorias", "descripcion", "descripcion_categoria"]
+    )
+    const actividadesHorariosCategorias = await actividadesJoins.concatJoin("categorias", "id", "id_categorias")
+    console.log(actividadesHorariosCategorias[0])
 }

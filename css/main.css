@@ -45,7 +45,8 @@ img {
 }
 
 .contenedor-menu {
-    background-color: #e8c39e;
+    background-image: url("../img/jungla.jpg");
+    background-size: cover;
 }
 
 @media (min-width: 400px) {
@@ -92,7 +93,7 @@ img {
 
 #menu-principal ul li:hover {
     background-color: red;
-    background-color: #d7b28d;
+    background-color: #d8d964;
     text-decoration: underline;
 }
 
@@ -111,4 +112,8 @@ img {
 .bg-tierra {
     background-image: url("../img/tierra.jpg");
     background-size: cover;
+}
+
+.alto {
+    height: 1525px;
 }

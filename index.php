@@ -14,25 +14,14 @@
 
 <body>
     <header>
-        <div id="contenedor-carrusel"></div>
-        <div class="contenedor-menu text-center">
 
-            <i class="fas fa-bars" id="boton-menu"></i>
-            <nav id="menu-principal" class="dis-none">
-                <ul>
-                    <li><a href="">Actividades</a></li>
-                    <li>
-                        <a href="">a</a>
-                    </li>
-                    <li>
-                        <a href="">b</a>
-                    </li>
-                    <li>
-                        <a href="">c</a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
+        <div id="contenedor-carrusel"></div>
+        
+            
+<?php 
+include_once("./PHP/components/header.php")
+?>
+        <div id="index"></div>
     </header>
     <main class="container">
         <h1 class="text-center">Ven y Conoce Zootopolis</h1>

@@ -24,7 +24,6 @@ export default class JoinHelper {
         const fetchs = await fetch(this.url + table)
         const result = await fetchs.json()
         const auxResult = []
-
         result.forEach(element1 => {
             this.result.forEach(element2 => {
                 if (element1[column1] === element2[column2]) {
@@ -35,6 +34,7 @@ export default class JoinHelper {
                                 [ali[2]]: element1[ali[1]]
                             }
                             delete element1[ali[1]]
+
                         }
                     })
 
