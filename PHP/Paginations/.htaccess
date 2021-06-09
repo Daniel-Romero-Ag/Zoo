@@ -1,0 +1,7 @@
+Options +FollowSymLinks
+RewriteEngine On
+
+
+
+RewriteRule ^actividades/([0-9]+)$ actividades.php?PaginationNumber=$1
+RewriteRule ^actividades$ actividades.php?PaginationNumber=1

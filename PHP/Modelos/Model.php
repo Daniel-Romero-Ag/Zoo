@@ -11,6 +11,7 @@ abstract class Model{
     protected $query;
     protected $rows=array();
 
+
     abstract protected function create($datos);
     abstract protected function read($id);
     abstract protected function update($datos);

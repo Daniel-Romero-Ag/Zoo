@@ -117,3 +117,13 @@ img {
 .alto {
     height: 1525px;
 }
+
+#cuerpo-tabla-actividades tr td:hover {
+    cursor: grab;
+}
+
+#cuerpo-tabla-actividades tr td:active {
+    cursor: grabbing!important;
+    cursor: -moz-grabbing!important;
+    cursor: -webkit-grabbing!important;
+}

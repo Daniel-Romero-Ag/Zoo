@@ -92,9 +92,18 @@ function agregarEventosDragAndDrop() {
     let $acticidadSeleccionada;
     $actividades.forEach(actividad => {
         actividad.addEventListener("dragstart", e => {
+
             $acticidadSeleccionada = e.target
+            e.target.classList.add("dragging")
+
+        })
+        actividad.addEventListener("drag", e => {
+
+
+            e.target.classList.add("dragging")
         })
         actividad.addEventListener("dragend", e => {
+            e.target.classList.remove("dragging")
             $acticidadSeleccionada = undefined
         })
 
@@ -107,6 +116,12 @@ function agregarEventosDragAndDrop() {
             contenedorActividad.innerHTML = ""
             const $acticidadSeleccionadaClon = document.importNode($acticidadSeleccionada, true)
             $acticidadSeleccionadaClon.className = ""
+            const icono = document.createElement("i")
+            icono.classList.add("far", "fa-window-close")
+            icono.addEventListener("click", e => {
+                contenedorActividad.removeChild($acticidadSeleccionadaClon)
+            })
+            $acticidadSeleccionadaClon.appendChild(icono)
             contenedorActividad.appendChild($acticidadSeleccionadaClon)
         })
     })
