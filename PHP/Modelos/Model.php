@@ -7,6 +7,7 @@ abstract class Model{
     protected $db_name;
     private static $db_charset='utf8';
     private $conn;
+    protected $error;
     protected $affected_rows;
     protected $query;
     protected $rows=array();
@@ -49,8 +50,8 @@ abstract class Model{
             array_pop($this->rows);
             $result->close();
         }
+        $this->error=$this->conn->error;
         $this->db_close();
-       
         return $this->rows;
     }
 
