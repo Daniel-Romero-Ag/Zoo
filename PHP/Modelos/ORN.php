@@ -1,7 +1,7 @@
 <?php
-include("./Model.php");
+include("C:/xampp/htdocs/Zoo/PHP/Modelos/DefaultCrud.php");
 
-class ORN extends Model{ 
+class ORN extends DefaultCrud{ 
     
     private $db_table;
     private $select;
@@ -81,22 +81,23 @@ class ORN extends Model{
             
             }
         }else{
-            $this->errors[]="El parámetro en where no es un array";
-            
+            $this->errors[]="El parámetro en where no es un array";            
         }
      
     }
-    public function getError(){
+    public function getMySQLError(){
         return $this->error;
     }
+    public function getORNError(){
+        return $this->errors;
+    }
 
-    protected function create($datos){}
     
     public function read($id=""){
         if($id){
             if($this->where){
                 $this->where= " and " . substr($this->where,6); 
-                  
+                
             }
             $this->query= "SELECT $this->select FROM $this->db_table $this->join WHERE $this->db_table.id = $id $this->where $this->take";
         }else{
@@ -106,20 +107,18 @@ class ORN extends Model{
         ($id && count($this->rows)==1)
         ? $this->rows= $this->rows[0]
         : $this->rows=$this->rows; 
-        
+        $this->resetParams();
         return $this->rows; 
     }
-    protected function update($datos){}
-    protected function delete($id){}
 }
 
-$actividades= new ORN("zoologico","actividades");
-// var_dump($actividades->all());
+// $actividades= new ORN("zoologico","actividades");
+// // var_dump($actividades->all());
 
 
-$actividades->join([["id_horarios","horarios","id"],["id_categorias","categorias","id"]]);
+// $actividades->join([["id_horarios","horarios","id"],["id_categorias","categorias","id"]]);
 
-$actividades->select(["horarios.id as idHorarios","actividades.nombre"]);
+// $actividades->select(["horarios.id as idHorarios","actividades.nombre"]);
 
-$actividades->where([["precio","=","1000"]]);
-echo json_encode(["result"=>$actividades->read(2),"errors"=>$actividades->getError()]);
+// $actividades->where([["precio","=","1000"]]);
+// echo json_encode(["result"=>$actividades->read(2),"MySqlErrors"=>$actividades->getMySQLError(),"ORNErrors"=>$actividades->getORNError()]);

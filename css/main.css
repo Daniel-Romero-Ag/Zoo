@@ -127,3 +127,16 @@ img {
     cursor: -moz-grabbing!important;
     cursor: -webkit-grabbing!important;
 }
+
+a.activo {
+    font-size: 25px;
+    font-weight: bold;
+    text-decoration: underline!important;
+}
+
+#contenedor-boletos {
+    background-image: url("../img/zoolog.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
