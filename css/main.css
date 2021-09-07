@@ -140,3 +140,7 @@ a.activo {
     background-size: cover;
     background-repeat: no-repeat;
 }
+
+.contactanos i {
+    font-size: 2rem;
+}

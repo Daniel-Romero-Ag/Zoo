@@ -3,7 +3,7 @@
 abstract class Model{
     private static $db_host ="localhost";
     private static $db_user ="root";
-    private static $db_pass ="";
+    private static $db_pass ="root";
     protected $db_name;
     private static $db_charset='utf8';
     private $conn;
@@ -36,6 +36,7 @@ abstract class Model{
         $this->db_open();
         $this->conn->query($this->query);
         $this->affected_rows=$this->conn->affected_rows;
+        // echo $this->conn->insert_id;
         $this->db_close();
     }
     

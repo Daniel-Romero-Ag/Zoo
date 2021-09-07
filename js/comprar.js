@@ -63,6 +63,14 @@ document.addEventListener("DOMContentLoaded", e => {
             } else {
                 $contenedorBoletos.innerHTML = ""
                 e.target.disabled = true
+                actividadesSeleccionadas = {
+                    "Entrada General": 150
+                }
+                precioBoleto = 150
+                const $boleto = document.getElementById("contenedor-boletos")
+                console.log($boleto)
+                $boleto.querySelector("#precioBoleto").innerText = "$150 mx"
+                $boleto.querySelector(".total").innerText = "150"
             }
         }
         if (e.target.matches("#agregar")) {
@@ -82,6 +90,7 @@ document.addEventListener("DOMContentLoaded", e => {
             const $actividadSeleccionada = document.getElementById("actividadSeleccionada").content
             const $fragmentoActividades = document.createDocumentFragment()
             let total = 0;
+
             for (const iterator in actividadesSeleccionadas) {
                 const $actividadSeleccionadaClon = document.importNode($actividadSeleccionada, true)
                 $actividadSeleccionadaClon.querySelectorAll(".col-6")[0].innerHTML = iterator
@@ -90,11 +99,18 @@ document.addEventListener("DOMContentLoaded", e => {
                 total += actividadesSeleccionadas[iterator]
 
             }
+            actividadesSeleccionadas = {
+                "Entrada General": 150
+            }
+            precioBoleto = 150
             $boletoCompradoClon.querySelector(".total").innerHTML = total
             $boletoCompradoClon.querySelector(".resumen").firstElementChild.children[1].innerHTML = boletos
             $boletoCompradoClon.querySelector(".resumen").firstElementChild.children[3].innerHTML = boletos * total
             $listaBoleto.appendChild($fragmentoActividades)
-
+            const $boleto = document.getElementById("contenedor-boletos")
+            console.log($boleto)
+            $boleto.querySelector("#precioBoleto").innerText = "$150 mx"
+            $boleto.querySelector(".total").innerText = "150"
             $contenedorBoletos.appendChild($boletoCompradoClon)
         }
     })

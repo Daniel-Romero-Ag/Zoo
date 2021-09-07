@@ -47,13 +47,13 @@ document.addEventListener("DOMContentLoaded", e => {
     if (document.getElementById("index")) {
         agregarContenedorCarrusel("#contenedor-carrusel");
         agregarActividades2("#contenedor-actividades")
-        document.addEventListener("click", e => {
-            manejarBotonMenu(e)
-        })
     }
 
 
+    document.addEventListener("click", e => {
+        manejarBotonMenu(e)
 
+    })
 })
 
 

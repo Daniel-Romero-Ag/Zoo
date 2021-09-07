@@ -1,11 +1,12 @@
+
 <?php 
 
     echo '
     <div class="contenedor-menu text-center container-fluid" style="overflow:hidden;">
-    <i class="fas fa-bars" id="boton-menu"></i>
-<div class="row ">
-            <img src="img/logo.jpg" class="col-2 " style="max-height:100%;">
-    <nav id="menu-principal" class="dis-none col-10 pt-3" style="font-size:20px;" >
+    <div class="row ">
+    <i class="fas fa-bars" style="background-color:#d8d964;" id="boton-menu"></i>
+            <img src="img/logo.jpg" class="col-12 col-md-2" style="max-height:100%; padding-right:0;">
+    <nav id="menu-principal" class="dis-none col-12 col-md-10 pt-3" style="font-size:20px;" >
                 <ul>
                     <li>'. 
                         (($_SERVER["REQUEST_URI"]=="/zoo/index.php") 
@@ -33,3 +34,5 @@
     </div>
     '
 ?>
+
+<script src="../../zoo/js/main.js" type="module"></script>

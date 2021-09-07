@@ -44,7 +44,7 @@
                         <div class="col-12 text-center">Precio por boleto: <span id="precioBoleto">$150 mx</span></div>
                         <div class="col-12 text-center">Total: $<span class="total">150</span> mx</div>
                     </form>
-                   
+                   <img src="" alt="">
                 </div>
                 <div class="col-4 row">
                             <div class="col-12"><p><span class="fw-bold">Dirección:</span>  Miguel Hidalgo, Ciudad de México, CDMX</p></div>
